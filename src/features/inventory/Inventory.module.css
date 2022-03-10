@@ -54,17 +54,26 @@
 }
 
 .inventoryItem {
-  transition: background-color 0.5s;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 
 .inventoryItem:focus {
-  background-color: rgba(112, 76, 182, 0.1);
+  background-color: rgba(112, 76, 182, 0.4);
   outline: none;
 }
 
 .inventoryItem:focus-visible {
   outline: none;
+}
+
+.inventoryItemFull {
+  background-color: rgba(91, 166, 91, 0.5);
+}
+
+.inventoryItemFull:focus {
+  background-color: #5ba65b;
+  color: #fff;
 }
 
 .inventoryItems th {

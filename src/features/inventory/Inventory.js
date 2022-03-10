@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import cn from 'classnames';
 import {
     addItem,
     removeItem,
@@ -79,7 +80,9 @@ export function Inventory() {
                                         key={`inventory-item-${index}`}
                                         ref={ref => { itemsRef.current[index] = ref; }}
                                         tabIndex={0}
-                                        className={styles.inventoryItem}
+                                        className={cn(styles.inventoryItem, {
+                                            [styles.inventoryItemFull]: item.count >= item.targetCount
+                                        })}
                                         onKeyDown={(event) => itemKeyListener(event, index)}
                                     >
                                         <td>{item.name}</td>
